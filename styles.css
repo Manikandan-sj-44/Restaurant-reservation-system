@@ -1,0 +1,122 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('digital-lavender-style-interior-design.jpg'); /* Replace with your image URL */
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin: 0;
+    padding: 20px;
+    color: #333; /* Default text color */
+    height: 100vh;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    max-width: 600px;
+    max-height: 500px;
+    /*margin: auto;*/
+    background: rgba(255, 255, 255,0); /* Semi-transparent white */
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    height: 100vh;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+h1, h2 {
+    text-align: center;
+    color: #090a0a; /* Darker color for headings */
+    font-family: 'Georgia', serif; /* Stylish font for headings */
+    margin-top: -20px;
+    position: relative;
+    text-align: center;
+    color: black;
+    font-size: 36px;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold; /* Make labels bold */
+}
+
+input {
+    width: 97%;
+    padding: 10px;
+    margin-bottom: 015px;
+    border: 1px solid #f3eeee;
+    border-radius: 4px;
+    font-size: 18px; /* Increase font size */
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px; /* Increase button font size */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+button:hover {
+    background-color: #218838;
+}
+#authContainer #loginForm button
+{
+    width: 100px;
+    position: absolute;
+
+
+   
+}
+#registerBtn 
+{
+    width: 100px;
+    margin-left: 500px;
+    margin-bottom: 0px;
+}
+
+.reservation-item {
+    background: rgba(233, 236, 239, 0.9); /* Slightly transparent background */
+    padding: 25px;
+    width: 400px;
+    margin: 1px 0;
+    border-radius: 4px;
+    position: relative;
+}
+
+.delete-btn {
+    background: red;
+    color: white;
+    border: none;
+    width: 60px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 10px; /* Adjusted position */
+}
+#a{
+    margin-top: -45px;
+    position: relative;
+    text-align: center;
+    color: rgb(15, 16, 16);
+    font-size: 36px;
+    /*padding: 0%;
+    margin: 0%;
+    font-size:150%;*/
+}
+#reservationList{
+    width: 100px;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,height=device-height, initial-scale=1.0">
+    <title>Restaurant Reservation System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div id="a"><h1 id="a">Restaurant Reservation System</h1></div>
+        <div id="authContainer">
+            <form id="loginForm">
+                <label for="username">Username:</label><br>
+                <input type="text" id="username" required>
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" required>
+                
+                <button type="submit">Login</button>
+            </form>
+            <button id="registerBtn">Register</button>
+        </div>
+
+        <div id="reservationContainer" style="display: none;">
+            <form id="reservationForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+                
+                <label for="date">Reservation Date:</label>
+                <input type="date" id="date" required>
+                
+                <label for="time">Time:</label>
+                <input type="time" id="time" required>
+                
+                <label for="table">Table Number:</label>
+                <input type="number" id="table" min="1" required>
+                
+                <button type="submit">Book Table</button><br>
+            </form><br>
+            <h2>Your Reservations</h2>
+            <span id="reservationsList"></span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
