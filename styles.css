@@ -1,12 +1,12 @@
 body {
     font-family: 'Arial', sans-serif;
-    background-image: url('digital-lavender-style-interior-design.jpg'); /* Replace with your image URL */
+    background-image: url('digital-lavender-style-interior-design.jpg');
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
     margin: 0;
     padding: 20px;
-    color: #333; /* Default text color */
+    color: #333; 
     height: 100vh;
     display:flex;
     flex-direction: column;
@@ -18,7 +18,7 @@ body {
     max-width: 600px;
     max-height: 500px;
     /*margin: auto;*/
-    background: rgba(255, 255, 255,0); /* Semi-transparent white */
+    background: rgba(255, 255, 255,0); 
     padding: 10px;
     border-radius: 8px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
@@ -32,8 +32,8 @@ body {
 
 h1, h2 {
     text-align: center;
-    color: #090a0a; /* Darker color for headings */
-    font-family: 'Georgia', serif; /* Stylish font for headings */
+    color: #090a0a; 
+    font-family: 'Georgia', serif; 
     margin-top: -20px;
     position: relative;
     text-align: center;
@@ -44,7 +44,7 @@ h1, h2 {
 label {
     display: block;
     margin: 10px 0 5px;
-    font-weight: bold; /* Make labels bold */
+    font-weight: bold; 
 }
 
 input {
@@ -53,7 +53,7 @@ input {
     margin-bottom: 015px;
     border: 1px solid #f3eeee;
     border-radius: 4px;
-    font-size: 18px; /* Increase font size */
+    font-size: 18px; 
 }
 
 button {
@@ -64,8 +64,8 @@ button {
     border-radius: 5px;
     cursor: pointer;
     width: 100%;
-    font-size: 16px; /* Increase button font size */
-    transition: background-color 0.3s; /* Smooth transition */
+    font-size: 16px; 
+    transition: background-color 0.3s; 
 }
 
 button:hover {
@@ -87,7 +87,7 @@ button:hover {
 }
 
 .reservation-item {
-    background: rgba(233, 236, 239, 0.9); /* Slightly transparent background */
+    background: rgba(233, 236, 239, 0.9); 
     padding: 25px;
     width: 400px;
     margin: 1px 0;
@@ -105,7 +105,7 @@ button:hover {
     cursor: pointer;
     position: absolute;
     right: 20px;
-    top: 10px; /* Adjusted position */
+    top: 10px; 
 }
 #a{
     margin-top: -45px;

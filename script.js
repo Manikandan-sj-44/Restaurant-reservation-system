@@ -1,6 +1,6 @@
-const users = []; // Simulated user database
+const users = [];
 let currentUser = null;
-const reservations = []; // Store reservations
+const reservations = [];
 
 document.getElementById('loginForm').addEventListener('submit', function(e) {
     e.preventDefault();
@@ -8,7 +8,6 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
 
-    // Simulated login
     const user = users.find(u => u.username === username && u.password === password);
     if (user) {
         currentUser = user;
@@ -30,7 +29,7 @@ document.getElementById('registerBtn').addEventListener('click', function() {
 function showReservationContainer() {
     document.getElementById('authContainer').style.display = 'none';
     document.getElementById('reservationContainer').style.display = 'block';
-    document.getElementById('name').value = currentUser.username; // Pre-fill name
+    document.getElementById('name').value = currentUser.username; 
 }
 
 document.getElementById('reservationForm').addEventListener('submit', function(e) {
@@ -41,8 +40,6 @@ document.getElementById('reservationForm').addEventListener('submit', function(e
     const date = document.getElementById('date').value;
     const time = document.getElementById('time').value;
     const table = document.getElementById('table').value;
-
-    // Check for existing reservations
     const isAlreadyBooked = reservations.some(reservation => 
         reservation.date === date && 
         reservation.time === time && 
@@ -64,12 +61,11 @@ document.getElementById('reservationForm').addEventListener('submit', function(e
         <button class="delete-btn">Delete</button>
     `;
 
-    reservations.push({ name, email, date, time, table }); // Store reservation
+    reservations.push({ name, email, date, time, table });
 
     const deleteButton = reservationItem.querySelector('.delete-btn');
     deleteButton.addEventListener('click', function() {
         reservationsList.removeChild(reservationItem);
-        // Remove from reservations array
         const index = reservations.findIndex(reservation => 
             reservation.date === date && 
             reservation.time === time && 
@@ -82,6 +78,5 @@ document.getElementById('reservationForm').addEventListener('submit', function(e
 
     reservationsList.appendChild(reservationItem);
 
-    // Clear the form
     document.getElementById('reservationForm').reset();
 });
