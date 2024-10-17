@@ -1,6 +1,16 @@
-const users = [];
+const users = JSON.parse(localStorage.getItem('users')) || []; 
 let currentUser = null;
-const reservations = [];
+const reservations = JSON.parse(localStorage.getItem('reservations')) || []; 
+
+function saveUsers() {
+    localStorage.setItem('users', JSON.stringify(users));
+}
+
+
+function saveReservations() {
+    localStorage.setItem('reservations', JSON.stringify(reservations));
+}
+
 
 document.getElementById('loginForm').addEventListener('submit', function(e) {
     e.preventDefault();
@@ -17,11 +27,13 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
     }
 });
 
+
 document.getElementById('registerBtn').addEventListener('click', function() {
     const username = prompt('Enter username:');
     const password = prompt('Enter password:');
     if (username && password) {
         users.push({ username, password });
+        saveUsers(); 
         alert('User registered successfully!');
     }
 });
@@ -32,6 +44,7 @@ function showReservationContainer() {
     document.getElementById('name').value = currentUser.username; 
 }
 
+
 document.getElementById('reservationForm').addEventListener('submit', function(e) {
     e.preventDefault();
 
@@ -40,6 +53,7 @@ document.getElementById('reservationForm').addEventListener('submit', function(e
     const date = document.getElementById('date').value;
     const time = document.getElementById('time').value;
     const table = document.getElementById('table').value;
+
     const isAlreadyBooked = reservations.some(reservation => 
         reservation.date === date && 
         reservation.time === time && 
@@ -62,6 +76,7 @@ document.getElementById('reservationForm').addEventListener('submit', function(e
     `;
 
     reservations.push({ name, email, date, time, table });
+    saveReservations(); 
 
     const deleteButton = reservationItem.querySelector('.delete-btn');
     deleteButton.addEventListener('click', function() {
@@ -73,10 +88,38 @@ document.getElementById('reservationForm').addEventListener('submit', function(e
         );
         if (index > -1) {
             reservations.splice(index, 1);
+            saveReservations(); 
         }
     });
 
     reservationsList.appendChild(reservationItem);
-
     document.getElementById('reservationForm').reset();
 });
+
+
+function loadReservations() {
+    const reservationsList = document.getElementById('reservationsList');
+    reservations.forEach(reservation => {
+        const reservationItem = document.createElement('div');
+        reservationItem.className = 'reservation-item';
+        reservationItem.innerHTML = `
+            <strong>${reservation.name}</strong> (${reservation.email})<br>
+            Date: ${reservation.date}, Time: ${reservation.time}, Table: ${reservation.table}
+            <button class="delete-btn">Delete</button>
+        `;
+
+        const deleteButton = reservationItem.querySelector('.delete-btn');
+        deleteButton.addEventListener('click', function() {
+            reservationsList.removeChild(reservationItem);
+            const index = reservations.indexOf(reservation);
+            if (index > -1) {
+                reservations.splice(index, 1);
+                saveReservations(); 
+            }
+        });
+
+        reservationsList.appendChild(reservationItem);
+    });
+}
+
+loadReservations();
